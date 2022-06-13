@@ -1,0 +1,499 @@
+@import 'fonts/fonts.css';
+
+.fw-500{
+    font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, p{
+    padding: 0;
+    margin: 0;
+
+    font-weight: 400;
+}
+
+p{
+    font-size: 12px;
+
+    padding: 0;
+    margin: 0;
+}
+
+
+/* ================================= Общие стили */
+body{
+    font-family: 'Neo Sans Pro';
+    font-weight: 400;
+
+    background: #131313;
+    color: #EAEAEA;
+}
+
+
+
+.container{
+    max-width: 1194px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.heading{
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 58px;
+
+    padding-bottom: 50px;
+}
+
+@media screen and (max-width: 991px) {
+    .heading{
+        font-size: 36px;
+        line-height: 43px;
+    
+        padding-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .heading{
+        font-size: 24px;
+        line-height: 29px;
+    
+        padding-bottom: 20px;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: #EAEAEA;
+}
+
+a:hover{
+    color: #EAEAEA;
+}
+
+section{
+    padding-bottom: 100px;
+}
+
+@media screen and (max-width: 991px) {
+    section{
+        padding-bottom: 50px;
+    }
+}
+
+
+/* ================================= Scroll up */
+div.scrollup{
+    position: fixed;
+    display: none;
+
+    width: 50px;
+    height: 50px;
+    right: 20px;
+    bottom: 0;
+
+    color: #EAEAEA;
+    background-color:#8D8D8D;
+
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    font-size: 28px;
+    text-align: center;
+     
+    padding: 4px 10px;  
+
+    cursor: pointer;
+
+    z-index: 1000;
+}
+
+div.scrollup:hover{
+    background-color: #FFED00;
+    color: #0D0D0D;
+}
+
+
+/* ================================= Modal  */
+.modal-content{
+    background: #232323;
+}
+
+.modal-header, .modal-footer{
+    border: none;
+}
+
+.modal_title{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.btn_close{
+    border: none;   
+
+    background: none;
+    color: #EAEAEA;
+}
+
+
+/* ================================= Phone */
+.phone {
+    user-select: all;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 991px) {
+  .phone {
+    user-select: none;
+    pointer-events: auto;
+  }
+}
+
+
+/* ================================= Header */
+/* ======== Header gamburger */
+.header_heading_gamburger {
+    font-size: 18px;
+    line-height: 22px;
+
+    text-align: end;
+}
+
+@media screen and (max-width: 767px) {
+    .header_heading_gamburger {
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .header_heading_gamburger {
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+/* ======== Header contact */
+.header_contact{
+    background: #232323;
+}
+
+.contact_heading{
+    font-weight: 500;
+    line-height: 14px;
+
+    color: #8D8D8D;
+}
+
+.contact_information{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #EAEAEA;
+}
+
+.header_line{
+    display: inline-block;
+    list-style: none; 
+    border-right: 2px solid #3C3C3C; 
+    line-height: 96px;
+}
+
+/* ======== Header main */
+
+.header_heading{
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.question{
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #FFED00;
+
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+.question:hover{
+    color: #FFED00;
+}
+
+.btn{
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+
+    background-color: #FFED00;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 16px;
+}
+
+/* ======== Header nav */
+.header_nav{
+    background: #0D0D0D;
+}
+
+.nav-item{
+    padding: 20px 48px 20px 0;
+}
+
+.nav-item:last-child{
+    padding: 20px 0;
+}
+
+.nav-link{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+
+    color: #EAEAEA;
+
+    padding: 0;
+}
+
+.nav-link:hover{
+    color: #FFED00;
+}
+
+
+/* ================================= Slider */
+.carousel-caption{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    padding-left: 10px;
+}
+
+.carousel_block{
+    max-width: 444px;
+}
+
+.carousel_text_block{
+    padding-bottom: 40px;
+}
+
+.carousel-heading{
+    font-style: normal;
+    font-size: 36px;
+    line-height: 50px;
+    font-weight: 500;
+}
+
+.carousel_text{
+    font-size: 16px;
+    line-height: 19px;
+
+    padding-top: 10px;
+}
+
+.btn_carousel{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+
+    padding-right: 37px;
+    padding-left: 37px;
+}
+
+@media screen and (max-width: 991px) {
+
+    .carousel-heading{
+        font-size: 24px;
+        line-height: 29px;
+    }
+    
+    .carousel_text{
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .carousel_text_block{
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .carousel_block{
+        max-width: 170px;
+    }
+
+    .carousel-heading{
+        font-size: 14px;
+        line-height: 17px;
+    }
+    
+    .carousel_text{
+        font-size: 10px;
+        line-height: 12px;
+    }
+
+    .btn_carousel{
+        padding-right: 27px;
+        padding-left: 27px;
+    }
+
+}
+
+.btn_red{
+    background: #E31E24;
+    color: white;
+}
+
+.btn_red:hover{
+    color: white;
+}
+
+
+.btn_blue{
+    background: #21385A;
+    color: white;
+}
+
+.btn_blue:hover{
+    color: white;
+}
+
+
+/* ================================= Advantages */
+.card_inner{
+    background-color: #232323;
+
+    border-radius: 5px;
+}
+
+.card_text_advantages{
+    font-size: 16px;
+    line-height: 23px;
+}
+
+.card_text_servic{
+    padding-bottom: 50px;
+}
+
+
+/* ================================= Client_slider  */
+.carousel_container{
+    margin: auto;
+    max-width: 1090px;
+}
+
+.carousel-control-next {
+    justify-content: flex-end;
+}
+
+.carousel-control-prev {
+    justify-content: flex-start;
+}
+
+.img_client{
+    cursor: pointer;
+    filter: saturate(0%);
+    opacity: 80%;
+}
+
+.img_client:hover{
+    filter: saturate(100%);
+    opacity: 100%;
+}
+
+
+/* ================================= Services */
+.card_services{
+    background: #232323;
+
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.card_link_services{
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+
+    color: #FFED00;
+}
+
+
+/* ================================= Ask Question */
+.ask_question_inner{
+    background: #232323 ;
+
+    border-radius: 5px;
+    padding: 40px;
+}
+
+.ask_question_heading{
+    font-size: 24px;
+    line-height: 29px;
+
+    padding-bottom: 20px;
+}
+
+.footer_subtitle{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #8D8D8D;
+
+    padding-bottom: 12px;
+}
+
+.form-control{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+
+    background-color: #E9E9E9;
+    color: #B0B0B0;
+
+    padding: 16px;
+    border: none;
+}
+
+.number {
+    -moz-appearance: textfield;
+}
+
+.number::-webkit-inner-spin-button {
+    display: none;
+}
+
+
+/* ================================= Footer */
+footer{
+    background: #0D0D0D;
+}
+
+.footer_heading,
+.footer_heading_name{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;  
+}
+
+.boos_level_up{
+    font-size: 16px;
+    line-height: 19px;
+
+    padding-left: 10px;
+}
+
+.footer_logo{
+    max-width: 15px;
+    height: auto;
+}
+
+.footer_contact{
+    padding-bottom: 30px;
+}

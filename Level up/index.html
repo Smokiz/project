@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Главная страница - Level up</title>
+        <link rel="stylesheet" href="./libs/bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+
+    <body>
+
+        <!-- Скролл вверх -->
+        <div class="scrollup" onclick="topFunction()" id="scrollup">
+
+            <!-- Картинка в виде стрелки вверх -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+            </svg>
+
+        </div>
+
+
+        
+        <!-- Модальное окно "Заказать звонок" -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Шапка модального окна -->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Заказать звонок</h5>
+                        <button type="button" class="btn_close" data-bs-dismiss="modal" aria-label="Close">
+
+                            <!-- Картинка в виде крестика -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+
+                        </button>
+                    </div>
+
+                    <!-- Форма -->
+                    <form>
+                        <div class="modal-body py-0">
+                            <div class="row align-items-end">
+
+                                <div class="col-12 pb-3">
+                                    <label for="validationDefault01" class="footer_subtitle">ФИО</label>
+                                    <input type="text" class="form-control" id="validationModalFIO" placeholder="Иванов иван Иванович" aria-label="First name" required>
+                                </div>
+
+                                <div class="col-12">
+                                    <p class="footer_subtitle">Телефон</p>
+                                    <input type="number" class="form-control form-control_text number " id="validationModalPhoneNumber" placeholder="+7 961 114 5503" aria-label="Last name" minlength = "1" required>
+                                </div>
+
+                            </div> 
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn w-100 ">Отправить</button>
+                        </div>
+                    </form> 
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальное окно "Задать вопрос" -->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Шапка модального окна -->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Задать вопрос</h5>
+                        <button type="button" class="btn_close" data-bs-dismiss="modal" aria-label="Close">
+
+                            <!-- Картинка в виде крестика -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+
+                        </button>
+                    </div>
+
+                    <!-- Форма -->
+                    <form >
+                        <div class="modal-body py-0">
+                            <div class="row align-items-end">
+
+                                <div class="col-12 pb-3">
+                                    <label for="validationDefault01" class="footer_subtitle">ФИО</label>
+                                    <input type="text" class="form-control" id="validationModalFIO2" placeholder="Иванов иван Иванович" aria-label="First name" required>
+                                </div>
+
+                                <div class="col-12">
+                                    <p class="footer_subtitle">Ваш вопрос</p>
+                                    <textarea class="form-control" id="validationModalQuestion" rows="3" required></textarea>
+                                </div>
+
+                            </div> 
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn w-100 ">Отправить</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    
+        <!-- Шапка -->
+        <header>
+
+            <!-- Шапка гамбургер -->
+            <div class="row d-md-block d-lg-none w-100 m-0 ">
+
+                <!-- Верхняя часть -->
+                <nav class="navbar py-2 px-0">
+                    <div class="container">
+
+                        <!-- Кнопка гамбургер -->
+                        <div class="col">
+                            <button class="btn_close px-0 py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                            
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                                </svg>
+
+                            </button>                            
+                        </div>
+
+                        <!-- Логотип -->
+                        <div class="col d-flex justify-content-center ">
+                            <img class="" src="./img/logomin.svg" alt="logomin">
+                        </div>
+
+                        <!-- Заголовок -->
+                        <div class="col">
+                            <h1 class="header_heading_gamburger ">Рекламно-производственная компания</h1>
+                        </div>
+
+                    </div>
+                </nav>
+
+                <!-- Внутренности гамбургера -->
+                <div class="collapse px-0" id="collapseExample">
+
+                    <!-- Навигация -->
+                    <div class="container header_nav">
+                            
+                        <div class="py-4">
+                            <a class="nav-link active" aria-current="page" href="#">Объемные буквы</a>
+                        </div>
+
+                        <div class="pb-4">
+                            <a class="nav-link" href="#">Вывески</a>
+                        </div>
+
+                        <div class="pb-4">
+                            <a class="nav-link" href="#">Информационные стенды</a>                                
+                        </div>
+
+                        <div class="pb-4">
+                            <a class="nav-link" href="#">Световые короба (лайт-боксы)</a>                                
+                        </div>
+
+                        <div class="pb-4">
+                            <a class="nav-link" href="#">Pos-материалы</a>                                
+                        </div>
+
+                        <div class="pb-4">
+                            <a class="nav-link" href="#">Таблички</a>                                
+                        </div>
+                             
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Верхняя часть шапки -->
+            <div class="header_contact d-lg-block d-none ">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <!-- Адрес -->
+                        <div class="col-5 py-3 h-100">
+                            <p class="contact_heading mb-1">Где мы находимся?</p>
+                            <p class="contact_information"><a href="#map">г. Новосибирск, поселок Садовый ,ул. Российская 15</a></p>
+                        </div>
+                    
+                        <!-- Номер телефона -->
+                        <div class="col-3 py-3 h-100">
+                            <p class="contact_heading mb-1">Телефон для заказов и вопросов:</p>
+                            <p class="contact_information phone"> <a href="tel:+79139170782">+7 (913) 917 07 82</a></p>
+                        </div>
+                        
+                        <!-- Электронная почта -->
+                        <div class="col-3 py-3 h-100">
+                            <p class="contact_heading mb-1">Почта для связи:</p>
+                            <p class="contact_information"><a href="mailto:boss_level_up@bk.ru">boss_level_up@bk.ru</a></p>
+                        </div>
+
+                        <!-- Соц-сети -->
+                        <div class="col-1 d-flex justify-content-end py-3 h-100">
+
+                            <a href="#">
+                                <img class="rounded-3 me-3" src="./img/vk.svg" alt="vk">
+                            </a>
+
+                            <a href="#">
+                                <img class="rounded-3" src="./img/instagram.svg" alt="instagram">
+                            </a>
+
+                        </div>
+                    </div>     
+                </div>    
+            </div>
+        
+            <!-- Середина шапки -->
+            <div class="header_main d-lg-block d-none" >
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <!-- Лого -->
+                        <div class="col-2 px-0">
+                            <img class="img-fluid my-2" src="./img/logo.png" alt="logo">
+                        </div>
+
+                        <!-- Заголовок -->
+                        <div class="col-5 text-center header_line">
+                            <h1 class="header_heading d-inline-block">Рекламно-производственная компания</h1>
+                        </div>
+
+                        <!-- Задать вопрос -->
+                        <div class="col-3 d-flex justify-content-center">
+                            <div>
+                                <p class="fw-500 mb-2" >У вас возникли вопросы?</p>
+                                <a class="question" data-bs-toggle="modal" data-bs-target="#exampleModal2">Задать вопрос</a>
+                            </div>
+                        </div>
+
+                        <!-- Заказать звонок -->
+                        <div class="col-2">
+                            <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">Заказать звонок</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Нижняя часть шапки шапки -->
+            <div class="header_nav d-lg-block d-none">
+                <div class="container">
+                    <ul class="nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Объемные буквы</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Вывески</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Информационные стенды</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Световые короба (лайт-боксы)</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pos-материалы</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Таблички</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </header>
+   
+        <!-- Основная часть сайта -->
+        <main>
+
+            <!-- Блок с главным слайдером -->
+            <section class="slider">
+                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+
+                    <!-- Индикаторы -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+
+                    <!-- Внутренности -->
+                    <div class="carousel-inner">
+
+                        <!-- Первый слайд -->
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            
+                            <img src="./img/Баннер 1.png" class="d-sm-block d-none img-fluid " alt="Баннер1">
+                            <img src="./img/smБаннер 1.png" class="d-block d-sm-none img-fluid " alt="Баннер1">
+
+                            <!-- Блок текстом и кнопкой -->
+                            <div class="carousel-caption d-flex align-items-center">
+                                <div class="container text-start">
+                                    <div class="carousel_block">
+
+                                        <div class="carousel_text_block">
+                                            <h5 class="carousel-heading">Согласуем, нарисуем, изготовим, доставим, смонтируем</h5>
+                                        </div>
+                                    
+                                        <a href="#ask_question">
+                                            <button type="button" class="btn btn_carousel btn_red" >Сделать заказ</button>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Второй слайд -->
+                        <div class="carousel-item" data-bs-interval="2000">
+
+                            <img src="./img/Баннер 2.png" class="d-sm-block d-none img-fluid " alt="Баннер1">
+                            <img src="./img/smБаннер 2.png" class="dblock d-sm-none img-fluid " alt="Баннер1">
+
+                            <!-- Блок текстом и кнопкой -->
+                            <div class="carousel-caption d-flex align-items-center">
+                                <div class="container text-start">
+                                    <div class="carousel_block">
+
+                                        <div class="carousel_text_block">
+                                            <h5 class="carousel-heading text-white">Действительно низкие и прозрачные цены</h5>
+                                        </div>
+                                        
+
+                                        <a href="#ask_question">
+                                            <button type="button" class="btn btn_carousel " >Сделать заказ</button>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Третий слайд -->
+                        <div class="carousel-item">
+
+                            <img src="./img/Баннер 3.png" class="d-sm-block d-none img-fluid " alt="Баннер1">
+                            <img src="./img/smБаннер 3.png" class="dblock d-sm-none img-fluid " alt="Баннер1">
+
+                            <!-- Блок текстом и кнопкой -->
+                            <div class="carousel-caption d-flex align-items-center">
+                                <div class="container text-start">
+                                    <div class="carousel_block">
+
+                                        <div class="carousel_text_block">
+                                            <h5 class="carousel-heading">Всегда идем на встречу нашим клиентам!</h5>
+                                            <p class="carousel_text">*в том числе и ночной монтаж</p> 
+                                        </div>
+                                        
+
+                                        <a href="#ask_question">
+                                            <button type="button" class="btn btn_carousel btn_blue">Сделать заказ</button>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Блок преимуществ -->
+            <section class="advantages">
+                <div class="container">
+
+                    <h2 class="heading">Почему именно мы?</h2>
+                    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4">
+                    
+                        <!-- Первая карточка -->
+                        <div class="col">
+                            <div class="card_inner d-flex align-items-center pe-2 p-3 h-100">
+                                <img class="pe-3 img-fluid" src="./img/like.svg"  alt="like">
+                                <p class="card_text_advantages">Качество от производителя -  из первых рук</p>
+                            </div>
+                        </div>
+
+                        <!-- Вторая карточка -->
+                        <div class="col">
+                            <div class="card_inner d-flex align-items-center pe-2 p-3 h-100">
+                                <img class="pe-3 img-fluid" src="./img/clock.svg"  alt="clock">
+                                <p class="card_text_advantages">Оперативное выполнение заказов любой сложности</p>
+                            </div>
+                        </div>
+
+                        <!-- Третья карточка -->
+                        <div class="col">
+                            <div class="card_inner d-flex align-items-center pe-2 p-3 h-100">
+                                <img class="pe-3 img-fluid" src="./img/support.svg"  alt="support">
+                                <p class="card_text_advantages">Бесплатная консультация по любому типу рекламных материалов</p>
+                            </div>
+                        </div>
+
+                        <!-- Четвертая карточка -->
+                        <div class="col">
+                            <div class="card_inner d-flex align-items-center pe-2 p-3 h-100">
+                                <img class="pe-3 img-fluid" src="./img/project.svg"  alt="project">
+                                <p class="card_text_advantages">Бесплатный вызов замерщика</p>
+                            </div>
+                        </div>
+
+                        <!-- Пятая карточка -->
+                        <div class="col">
+                            <div class="card_inner d-flex align-items-center pe-2 p-3 h-100">
+                                <img class="pe-3 img-fluid" src="./img/warranty.svg"  alt="warranty">
+                                <p class="card_text_advantages">Гарантия на изделия и монтаж 2 года</p>
+                            </div>
+                        </div>
+
+                        <!-- Шестая карточка -->
+                        <div class="col">
+                            <div class="card_inner d-flex align-items-center pe-2 p-3 h-100">
+                                <img class="pe-3 img-fluid" src="./img/discount.svg"  alt="discount">
+                                <p class="card_text_advantages">Скидки постоянным клиентам до 30%</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Блок услуг -->
+            <section class="services">
+                <div class="container">
+
+                    <h2 class="heading">Наши услуги</h2>
+
+                    <div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 g-4 ">
+
+                        <!-- Первая карточка -->
+                        <div class="col">
+                            <a href="#">
+                                <div class="card_services h-100 d-flex flex-column bd-highlight">
+                                    <img src="./img/photo1.png" class="img-fluid" alt="photo1">
+                            
+                                    <h5 class="py-4 bd-highlight">Объемные буквы</h5>
+                                    <p class="pb-3 bd-highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                                    <p class="card_link_services mt-auto bd-highlight">Подробнее</p>
+                                
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Вторая карточка -->
+                        <div class="col">
+                            <a href="#">
+                                <div class="card_services h-100 d-flex flex-column bd-highlight">
+                                    <img src="./img/photo2.png" class="img-fluid" alt="photo2">
+                                
+                                    <h5 class="py-4 bd-highlight">Вывески</h5>
+                                    <p class="pb-3 bd-highlight">Что такое вывеска? Это визитная карточка компании, играющая большую роль в имидже и развитии предприятия. Главный элемент наружной рекламы, который работает даже в вечернее и ночное время суток, когда вы отдыхаете!</p>
+                                    <p class="card_link_services mt-auto bd-highlight">Подробнее</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Третья карточка -->
+                        <div class="col">
+                            <a href="#">
+                                <div class="card_services h-100 d-flex flex-column bd-highlight">
+                                    <img src="./img/photo3.png" class="img-fluid" alt="photo3">
+
+                                    <h5 class="py-4 bd-highlight">Информационные стенды</h5>
+                                    <p class="pb-3 bd-highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p class="card_link_services mt-auto bd-highlight">Подробнее</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Четвертая карточка -->
+                        <div class="col">
+                            <a href="#"> 
+                                <div class="card_services h-100 d-flex flex-column bd-highlight">
+                                    <img src="./img/photo4.png" class="img-fluid" alt="photo4">
+
+                                    <h5 class="py-4 bd-highlight">Световые короба (лайт-боксы)</h5>
+                                    <p class="pb-3 bd-highlight ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                    <p class="card_link_services mt-auto bd-highlight">Подробнее</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Пятая карточка -->
+                        <div class="col">
+                            <a href="#">
+                                <div class="card_services h-100 d-flex flex-column bd-highlight">
+                                    <img src="./img/photo5.png" class="img-fluid" alt="photo5">
+
+                                    <h5 class="py-4 bd-highlight">Pos-материалы</h5>
+                                    <p class="pb-3 bd-highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p class="card_link_services mt-auto bd-highlight">Подробнее</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Шестая карточка -->
+                        <div class="col">
+                            <a href="#">
+                                <div class="card_services h-100 d-flex flex-column bd-highlight">
+                                    <img src="./img/photo6.png" class="img-fluid" alt="photo6">
+
+                                    <h5 class="py-4 bd-highlight">Таблички</h5>
+                                    <p class="pb-3 bd-highlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                                    <p class="card_link_services mt-auto bd-highlight">Подробнее</p>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Блок с слайдером клиентов -->
+            <section class="client_slider">
+                <div class="container">
+                    <h2 class="heading">Наши клиенты</h2>
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+
+                        <!-- Внутренности -->
+                        <div class="carousel-inner ">
+
+                            <!-- Первый слайд c картинками -->
+                            <div class="carousel-item px-3 active">
+                                <div class="row align-items-center carousel_container">
+
+                                    <div class="col d-flex justify-content-center">
+                                        <img class="img_client img-fluid" src="./img/moxitologo.png" alt="moxitologo">
+                                    </div>
+
+                                    <div class="col d-flex justify-content-center">
+                                        <img class="img_client img-fluid" src="./img/cropplogo.png" alt="cropplogo">
+                                    </div>
+
+                                    <div class="col d-md-flex d-none justify-content-center ">
+                                        <img class="img_client img-fluid" src="./img/totachi.png" alt="totachi">
+                                    </div>
+
+                                    <div class="col d-md-flex d-none justify-content-center">
+                                        <img class="img_client img-fluid" src="./img/сибакадемстройlogo .png" alt="сибакадемстройlogo">
+                                    </div>
+
+                                    <div class="col d-flex justify-content-center">
+                                        <img class="img_client img-fluid" src="./img/2gis.png" alt="2gis">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Второй слайд c картинками -->
+                            <div class="carousel-item px-3">
+                                <div class="row align-items-center carousel_container">
+
+                                    <div class="col d-md-flex d-none justify-content-center">
+                                        <img class="img_client img-fluid" src="./img/moxitologo.png" alt="moxitologo">
+                                    </div>
+
+                                    <div class="col d-md-flex d-none justify-content-center">
+                                        <img class="img_client img-fluid" src="./img/cropplogo.png" alt="cropplogo">
+                                    </div>
+
+                                    <div class="col d-flex justify-content-center">
+                                        <img class="img_client img-fluid" src="./img/totachi.png" alt="totachi">
+                                    </div>
+
+                                    <div class="col d-flex justify-content-center">
+                                        <img class="img_client img-fluid" src="./img/сибакадемстройlogo .png" alt="сибакадемстройlogo">
+                                    </div>
+
+                                    <div class="col d-flex justify-content-center">
+                                        <img class="img_client img-fluid" src="./img/2gis.png" alt="2gis">
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Боковая кнопка предыдущий слайд -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Предыдущий</span>
+                    </button>
+
+                    <!-- Боковая кнопка следующий слайд -->
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Следующий</span>
+                    </button>
+
+                </div>
+            </div>
+            </section>
+
+            <!-- Форма захвата -->
+            <section class="ask_question" id="ask_question"> 
+                <div class="container">
+
+                    <div class="ask_question_inner">
+                        <p class="ask_question_heading">Вы хотите сделать заказ или задать вопрос?</p>
+
+                        <form class="row g-4">
+
+                            <div class="col-lg-5 col-md-6">
+                                <p class="footer_subtitle">ФИО</p>
+                                <input type="text" class="form-control" id="validationFIO" placeholder="Иванов Иван Иванович" required>
+
+                            </div>
+
+                            <div class="col-lg-5 col-md-6">
+                                <p class="footer_subtitle">Телефон</p>
+                                <input type="number" class="form-control form-control_text number" id="validationNumber" placeholder="+7 961 114 5503" minlength = "1" required>
+                            </div>
+
+                            <div class="col-lg-2 col-12">
+                                <label class="input-title d-none d-lg-block pb-1" style="visibility: hidden;">q</label>
+                                <button type="submit" class="btn w-100  ">Отправить</button>
+                            </div>
+
+                        </form>   
+
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Подвал -->
+        <footer>
+            <div class="container">
+                <div class="row  align-items-center">
+
+                    <!-- Контакты -->
+                    <div class="col-md-4 order-md-first order-last py-4">
+
+                        <!-- Лого и название -->
+                        <div class="footer_contact d-flex align-items-center">
+                            <img class="img-fluid"  src="./img/logomin.png" alt="logomin">
+                            <p class="ps-2 fw-bold">ООО “ЛЕВЕЛ АП”</p>
+                        </div>
+
+                        <!-- Адрес -->
+                        <div class="footer_contact">
+                            <p class="contact_heading">Где мы находимся?</p>
+                            <p class="contact_information">г. Новосибирск, поселок Садовый ,ул. Российская 15</p>
+                        </div>
+
+                        <!-- Номер телефона -->
+                        <div class="footer_contact">
+                            <p class="contact_heading">Телефон для заказов и вопросов:</p>
+                            <p class="contact_information phone"><a href="tel:+79139170782">+7 (913) 917 07 82</a></p>
+                        </div>
+
+                        <!-- Электронная почта -->
+                        <div class="footer_contact">
+                            <p class="contact_heading">Почта для связи:</p>
+                            <p class="contact_information"><a href="mailto:boss_level_up@bk.ru">boss_level_up@bk.ru</a></p>
+                        </div>
+
+                        <!-- Социальные сети -->
+                        <div class="footer_social">
+
+                            <a class="nav-link pb-2" href="#">
+                                <div class="vk d-flex align-items-center pb-10px">
+                                    <img class="rounded-3 footer_logo" src="./img/vk.svg" alt="vk">
+                                    <p class="boos_level_up">boss_level_up</p>
+                                </div>
+                            </a>
+
+                            <a class="nav-link" href="#">
+                                <div class="inst d-flex align-items-center">
+                                    <img class="rounded-3 footer_logo" src="./img/instagram.svg" alt="instagram">
+                                    <p class="boos_level_up">boss_level_up</p>
+                                </div>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Яндекст карта (интерактивная) -->
+                    <div class="col-md-8 d-flex justify-content-end order-md-last order-first" id="map">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab844406f58c75736a1b67a7dbdfe0ff05e6bd5b338d90ecaf5a662f070d2d0b1&amp;width=100%25&amp;height=433&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        <!-- Скрипты -->
+        <script src="./libs/bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
+        <script src="./script.js"></script>
+    
+    </body>
+</html>
